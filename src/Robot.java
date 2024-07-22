@@ -21,7 +21,7 @@ public class Robot implements RobotConnection, RobotConnectionManager {
     public void moveRobotTo(int newX, int newY) {
         this.x = newX;
         this.y = newY;
-        System.out.println("Робот доехал");
+        System.out.println("Робот доехал, его координаты:\n"+"X:"+ getX()+ "   Y:"+getY());
     }
 
     @Override
