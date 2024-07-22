@@ -3,12 +3,10 @@ import java.util.concurrent.TimeUnit;
 public class Robot implements RobotConnection, RobotConnectionManager {
     private int x;
     private int y;
-    private boolean connection;
 
     Robot(int x, int y) {
         this.x = x;
         this.y = y;
-        this.connection = false;
     }
 
     public int getX() {
@@ -18,9 +16,7 @@ public class Robot implements RobotConnection, RobotConnectionManager {
     public int getY() {
         return y;
     }
-    public boolean connection(){
-        return connection;
-    }
+
     @Override
     public void moveRobotTo(int newX, int newY) {
         this.x = newX;
