@@ -3,7 +3,7 @@ import java.util.concurrent.TimeUnit;
 public class Robot implements RobotConnection, RobotConnectionManager {
     private int x;
     private int y;
-    boolean connection;
+    private boolean connection;
 
     Robot(int x, int y) {
         this.x = x;
@@ -25,6 +25,7 @@ public class Robot implements RobotConnection, RobotConnectionManager {
     public void moveRobotTo(int newX, int newY) {
         this.x = newX;
         this.y = newY;
+        System.out.println("Робот доехал");
     }
 
     @Override
@@ -35,6 +36,10 @@ public class Robot implements RobotConnection, RobotConnectionManager {
     @Override
     public boolean getConnection() {
         double success = Math.random();
-        return 0.5 < success;
+        if (success>0.5){
+            System.out.println("Соединение установлено");
+            return true;
+        }
+        else return false;
     }
 }
